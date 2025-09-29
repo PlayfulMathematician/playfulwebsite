@@ -30,6 +30,11 @@ url: "https://playfulmathematician.com" # the base hostname & protocol for your 
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
+
+include:
+  - _includes/head.html
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
