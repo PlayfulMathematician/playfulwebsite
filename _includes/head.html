@@ -1,15 +1,37 @@
-<script>
-  MathJax = 
-  {
-    tex: 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+  {% elsif site.description %}
+    <meta name="description" content="{{ site.description }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+
+  <script>
+    MathJax = 
     {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']]
-    },
-    svg: { 
-      fontCache: 'global' 
-    }
-  };
-</script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+      tex: 
+      {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      svg: 
+      {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+</head>
