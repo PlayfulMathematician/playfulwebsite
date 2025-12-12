@@ -3,6 +3,7 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
- 
+_python/venv 
+_python/assets
  
 .bundle/
