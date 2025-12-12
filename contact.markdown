@@ -5,5 +5,6 @@ permalink: /contact/
 ---
 
 You can reach me at  
-- Email: me@playfulmathematician.com 
+- Email: [me@playfulmathematician.com](mailto:me@playfulmathematician.com)
 - Github: [@PlayfulMathematician](https://github.com/PlayfulMathematician)
+
