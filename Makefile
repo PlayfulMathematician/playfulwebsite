@@ -1,13 +1,18 @@
-BUNDLE_PATH = vendor/bundle
+IMAGE := jekyll-build
+
 all: build
-bundle:
-	@BUNDLE_PATH=$(BUNDLE_PATH) bundle config set --local path '$(BUNDLE_PATH)'
-	@BUNDLE_PATH=$(BUNDLE_PATH) bundle install --path $(BUNDLE_PATH)
-build: bundle
-	@JEKYLL_ENV=production BUNDLE_PATH=$(BUNDLE_PATH) bundle exec jekyll build
-dev: bundle
-	@JEKYLL_ENV=development BUNDLE_PATH=$(BUNDLE_PATH) bundle exec jekyll serve --livereload
+
+build:
+	@docker build -t $(IMAGE) .
+	@id=$$(docker create $(IMAGE)); \
+	docker cp $$id:/site/_site ./_site; \
+	docker rm $$id
+
+dev:
+	@JEKYLL_ENV=development bundle exec jekyll serve --livereload
+
 clean:
-	@rm -rf _site .jekyll-cache .jekyll-metadata
-.PHONY: all bundle build dev clean
+	@rm -rf _site
+
+.PHONY: all build dev clean
 
