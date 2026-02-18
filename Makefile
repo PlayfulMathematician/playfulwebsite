@@ -5,14 +5,14 @@ all: build
 build:
 	@docker build -t $(IMAGE) .
 	@id=$$(docker create $(IMAGE)); \
-	docker cp $$id:/site/_site ./_site; \
+	docker cp $$id:/site/out ./_site; \
 	docker rm $$id
 
 dev:
 	@JEKYLL_ENV=development bundle exec jekyll serve --livereload
 
 clean:
-	@rm -rf _site
+	@rm -rf out
 
 .PHONY: all build dev clean
 
