@@ -16,3 +16,4 @@ header_pages:
   - index.markdown
   - about.markdown 
   - contact.markdown
+destination: out
