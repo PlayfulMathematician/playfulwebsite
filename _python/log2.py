@@ -9,4 +9,3 @@ plt.xlabel('x')
 plt.ylabel('value')
 plt.tight_layout()
 plt.savefig('assets/images/log2.png', dpi=150)
-
