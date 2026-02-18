@@ -5,7 +5,7 @@ all: build
 build:
 	@docker build -t $(IMAGE) .
 	@id=$$(docker create $(IMAGE)); \
-	docker cp $$id:/site/out ./_site; \
+	docker cp $$id:/site/out ./out; \
 	docker rm $$id
 
 dev:
