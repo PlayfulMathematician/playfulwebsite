@@ -9,6 +9,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
+
 include:
   - _includes/head.html
 
