@@ -5,5 +5,5 @@ _site
 vendor
 _python/venv 
 _python/assets
- 
+out/
 .bundle/
