@@ -7,3 +7,4 @@ _python/venv
 _python/assets
 out/
 .bundle/
+media/
